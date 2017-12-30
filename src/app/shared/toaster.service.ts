@@ -6,11 +6,17 @@ export class ToasterService {
     constructor(public toastr: ToastsManager) {
     }
 
-    showSuccessMessage(message: string) {
-        this.toastr.success(message);
+    showSuccessMessage(message: string, title?: string) {
+        this.toastr.success(message, title);
     }
-    showError(message: string) {
-        this.toastr.error(message);
+    showError(message: string, title?: string) {
+        this.toastr.error(message, title);
+    }
+    showWarning(message: string, title?: string) {
+        this.toastr.warning(message, title);
+    }
+    showInfo(message: string, title?: string) {
+        this.toastr.info(message, title);
     }
 }
 
