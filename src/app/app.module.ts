@@ -9,10 +9,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.route';
-import { ToasterService } from './shared/toaster.service';
+import { ToasterService, CustomOption } from './shared/toaster.service';
 import { LoginService } from './login/login.service';
 import { FormsModule } from '@angular/forms';
-
+import { ToastModule, ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ToastModule,
     FormsModule,
     CustomMaterialModule,
     AppRoutingModule
   ],
   providers: [
+    { provide: ToastOptions, useClass: CustomOption }, ToastsManager, ,
     ToasterService, LoginService],
   bootstrap: [AppComponent]
 })
