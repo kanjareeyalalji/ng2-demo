@@ -13,6 +13,7 @@ import { ToasterService, CustomOption } from './shared/toaster.service';
 import { LoginService } from './login/login.service';
 import { FormsModule } from '@angular/forms';
 import { ToastModule, ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToastModule, ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr'
     NavBarComponent,
     DashboardComponent,
     AboutUsComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { ToastModule, ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr'
     AppRoutingModule
   ],
   providers: [
-    { provide: ToastOptions, useClass: CustomOption }, ToastsManager, ,
+    { provide: ToastOptions, useClass: CustomOption }, ToastsManager,
     ToasterService, LoginService],
   bootstrap: [AppComponent]
 })
